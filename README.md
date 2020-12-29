@@ -1,6 +1,6 @@
 # Node.js, Express.js, MySQL Boilerplate
 
-A Node.js, Express.js, MySQL, Knex.js, JWT, EsLint, Docker Compose boilerplate for fast API developement.
+A Node.js, Express.js, MySQL, Knex.js, JWT, EsLint, Docker Compose boilerplate for fast API developement. The API is well secured, using latest packages for that. On top of that, user authentication with JWT is also in place. The SQL queries are built with Knex.js for easier development.
 
 ### How to launch locally
 The docker-composer.yml file:
