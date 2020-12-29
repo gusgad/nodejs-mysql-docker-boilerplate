@@ -1,14 +1,28 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A NodeJS, MySQL, Docker boilerplate to get up und running fast!",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusgad/nodejs-mysql-docker-boilerplate.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mysql",
+    "docker"
+  ],
+  "author": "@gusgad",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gusgad/nodejs-mysql-docker-boilerplate/issues"
+  },
+  "homepage": "https://github.com/gusgad/nodejs-mysql-docker-boilerplate#readme",
   "dependencies": {
     "express": "^4.17.1",
     "bcrypt": "5.0.0",
