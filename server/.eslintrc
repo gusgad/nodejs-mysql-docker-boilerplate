@@ -1,0 +1,46 @@
+{
+    "extends": "airbnb-base",
+    "parserOptions": {
+        "sourceType": "script"
+    },
+    "rules": {
+        "strict": 0,
+        "no-param-reassign": [
+            "error",
+            {
+                "props": false
+            }
+        ],
+        "func-names": 2,
+        "comma-dangle": 2,
+        "prefer-template": 2,
+        "camelcase": 2,
+        "no-underscore-dangle": 2,
+        "consistent-return": 0,
+        "no-console": 0,
+        "no-multiple-empty-lines": 0,
+        "newline-after-import": 0,
+        "indent": 0,
+        "no-bitwise": [
+            "error",
+            {
+                "allow": [
+                    "~"
+                ]
+            }
+        ]
+    },
+    "globals": {
+        "describe": true,
+        "it": true,
+        "after": true,
+        "afterEach": true,
+        "before": true,
+        "beforeEach": true,
+        "should": true
+    },
+    "env": {
+        "node": true,
+        "mocha": true
+    }
+}

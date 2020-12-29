@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  mysql-db:
+    image: mysql/mysql-server:8.0
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - boilerplate-network
+
+  node-app:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-db
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+    volumes:
+      - ./server:/opt/app:delegated
+      # bind-mounting these two files in will let you add packages during development without rebuilding
+      # for example, to add bower to your app while developing, just install it inside the container
+      # and then nodemon will restart. Your changes will last until you "docker-compose down" and will
+      # be saved on host for next build
+      # docker-compose exec node npm install --save bower
+      - ./server/package.json:/opt/package.json
+      - ./server/package-lock.json:/opt/package-lock.json
+      # this is a workaround to prevent host node_modules from accidently getting mounted in container
+      # in case you want to use node/npm both outside container for test/lint etc. and also inside container
+      # this will overwrite the default node_modules dir in container so it won't conflict with our
+      # /opt/node_modules location. Thanks to PR from @brnluiz
+      - notused:/opt/app/node_modules
+    networks:
+      - boilerplate-network
+
+
+volumes:
+  db_data:
+  notused:
+
+networks:
+  boilerplate-network:
+    driver: bridge
