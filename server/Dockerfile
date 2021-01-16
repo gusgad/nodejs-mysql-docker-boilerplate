@@ -2,7 +2,7 @@ FROM node:14.15.3
 
 RUN mkdir -p /opt/app
 
-ENV NODE_ENV=production
+ENV NODE_ENV production
 
 RUN apt-get -q update && apt-get -qy install netcat
 RUN npm i npm@latest -g
